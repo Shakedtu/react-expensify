@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import numeral from "numeral";
 import AppRouter, { history } from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 import { startSetExpenses } from "./actions/expenses";
@@ -13,6 +14,17 @@ import "./firebase/firebase";
 import LoadingPage from "./components/LoadingPage";
 
 const store = configureStore();
+numeral.register("locale", "he", {
+    delimiters: {
+        thousands: ',',
+        decimal: '.'
+    },
+    currency: {
+        symbol: '₪'
+    }
+});
+numeral.locale("he");
+
 const jsx = (
     <Provider store={store}> 
         <AppRouter />

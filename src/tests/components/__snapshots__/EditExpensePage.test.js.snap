@@ -37,5 +37,10 @@ exports[`should render edit expense correctly 1`] = `
       Remove Expense
     </button>
   </div>
+  <RemoveExpenseModal
+    isOpen={false}
+    onClickNo={[Function]}
+    onClickYes={[Function]}
+  />
 </div>
 `;
